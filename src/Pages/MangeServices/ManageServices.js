@@ -8,7 +8,7 @@ const ManageServices = () => {
     const allow = window.confirm('Are you sure?');
     if (allow) {
       //   console.log('OK');
-      fetch(`http://localhost:5000/service/${id}`, {
+      fetch(`https://cryptic-tundra-94878.herokuapp.com/service/${id}`, {
         method: 'DELETE',
       })
         .then((res) => res.json())

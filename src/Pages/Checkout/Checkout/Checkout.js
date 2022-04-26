@@ -33,13 +33,15 @@ const Checkout = () => {
       address: event.target.address.value,
       phone: event.target.phone.value,
     };
-    axios.post('http://localhost:5000/order', order).then((response) => {
-      const { data } = response;
-      if (data.insertedId) {
-        toast.success('Your order is placed!');
-        event.target.reset();
-      }
-    });
+    axios
+      .post('https://cryptic-tundra-94878.herokuapp.com/order', order)
+      .then((response) => {
+        const { data } = response;
+        if (data.insertedId) {
+          toast.success('Your order is placed!');
+          event.target.reset();
+        }
+      });
   };
   return (
     <div className="w-50 mx-auto">

@@ -5,7 +5,7 @@ const AddService = () => {
   const { register, handleSubmit } = useForm();
   const onSubmit = (data) => {
     console.log(data);
-    const url = `http://localhost:5000/service`;
+    const url = `https://cryptic-tundra-94878.herokuapp.com/service`;
     fetch(url, {
       method: 'POST',
       headers: {
