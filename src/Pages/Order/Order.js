@@ -32,9 +32,14 @@ const Order = () => {
     getOrders();
   }, [user?.email]);
   return (
-    <div>
+    <div className="w-50 mx-auto">
       <h3>Your Orders {orders.length} </h3>
-      <h6>{orders?.service}</h6>
+      {orders.map((order) => (
+        <div key={order._id}>
+          <h5>{order?.service}</h5>
+          <p>{order?.email}</p>
+        </div>
+      ))}
     </div>
   );
 };
